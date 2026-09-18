@@ -1,0 +1,4 @@
+# 本地开发调试用(--patch overlay;绝对路径)
+- insert:
+    - id: neufagents-plugin-01-dev
+      name: 'D:/HermesWorkSpace/Venus/agents/neufagents-plugin-1/src/index.ts'
