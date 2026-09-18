@@ -1,16 +1,17 @@
 {
   "name": "dsh-healthcheck",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Runtime health check for DeepSeek Harness: session-library scan + crash-tail inspection. Read-only.",
   "type": "module",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "exports": {
     ".": {
-      "types": "./src/index.ts",
-      "default": "./src/index.ts"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     }
   },
   "files": [
+    "dist",
     "src",
     "cordis.patch.yml"
   ],
@@ -24,6 +25,7 @@
     }
   },
   "scripts": {
+    "build": "tsc -p tsconfig.json",
     "test": "node --test tests/health.spec.ts tests/contract.spec.ts"
   },
   "author": "NeufAgents (neufagents.com)",
@@ -41,6 +43,8 @@
     "@deepseek-ai/cordis": "^4.0.2",
     "@deepseek-ai/dsh-session": "^0.1.5-rc.2",
     "@deepseek-ai/dsh-session-persistence": "^0.1.5-rc.2",
-    "@deepseek-ai/dsh-tools": "^0.1.5-rc.2"
+    "@deepseek-ai/dsh-tools": "^0.1.5-rc.2",
+    "@types/node": "^26.6.1",
+    "typescript": "^5.7.0"
   }
 }
