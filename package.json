@@ -1,7 +1,7 @@
 {
-  "name": "neufagents-plugin-01",
+  "name": "dsh-healthcheck",
   "version": "0.1.0",
-  "description": "dsh runtime health check (working title: sentinel)",
+  "description": "Runtime health check for DeepSeek Harness: session-library scan + crash-tail inspection. Read-only.",
   "type": "module",
   "main": "src/index.ts",
   "exports": {
@@ -24,9 +24,19 @@
     }
   },
   "scripts": {
-    "test": "node --test tests/health.spec.ts"
+    "test": "node --test tests/health.spec.ts tests/contract.spec.ts"
   },
-  "private": true,
+  "author": "NeufAgents (neufagents.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neufagents/dsh-healthcheck.git"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "health-check"
+  ],
   "devDependencies": {
     "@deepseek-ai/cordis": "^4.0.2",
     "@deepseek-ai/dsh-session": "^0.1.5-rc.2",

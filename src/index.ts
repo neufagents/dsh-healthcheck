@@ -5,7 +5,7 @@ import type { Context } from '@deepseek-ai/cordis'
 import { defineTool } from '@deepseek-ai/dsh-tools'
 import { analyzeLibrary, analyzeLog, formatLibraryReport, formatLogReport, type EventLike } from './health.ts'
 
-export const name = 'neufagents-plugin-01'
+export const name = 'dsh-healthcheck'
 export const inject = ['tools', 'sessionPersistence'] as const
 
 export function apply(ctx: Context): void {
