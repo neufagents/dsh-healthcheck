@@ -22,6 +22,7 @@
 ## 安装
 
 ```sh
+# 需要机器上有 pnpm(dsh plugin 会把命令转发给 pnpm)
 dsh plugin --profile web add github:neufagents/dsh-healthcheck
 ```
 
@@ -32,6 +33,7 @@ dsh plugin --profile web add github:neufagents/dsh-healthcheck
 ## 兼容性
 
 - 在 dsh `0.1.5-rc.2`(开发者预览版)上测试通过。rc 版本迭代很快,欢迎反馈问题。
+- 请使用 **v0.1.1 及以后版本**。v0.1.0 直接分发 TypeScript 源码,而 Node 拒绝从 `node_modules` 加载需类型剥离的文件(`ERR_UNSUPPORTED_NODE_MODULES_TYPE_STRIPPING`);v0.1.1 改为分发编译后的 JS(`dist/`)。
 
 ## 许可
 

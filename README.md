@@ -22,6 +22,7 @@ Everything is **read-only** — it never modifies a single byte of your data.
 ## Install
 
 ```sh
+# requires pnpm on PATH (dsh plugin forwards to pnpm)
 dsh plugin --profile web add github:neufagents/dsh-healthcheck
 ```
 
@@ -32,11 +33,13 @@ Then restart dsh and ask your agent:
 ## Compatibility
 
 - Tested with dsh `0.1.5-rc.2` (developer preview). The rc line moves fast; issues welcome.
+- Use **v0.1.1+**. v0.1.0 shipped raw TypeScript sources, which Node refuses to load from `node_modules` (`ERR_UNSUPPORTED_NODE_MODULES_TYPE_STRIPPING`); v0.1.1 ships compiled JS in `dist/`.
 
 ## Development
 
 ```sh
 npm i
+npm run build     # tsc -> dist/ (compiled JS is what gets shipped)
 npm test          # 11 tests (pure functions + contract)
 npx @deepseek-ai/dsh --profile web --patch ./dev.patch.yml --dump-config
 ```
